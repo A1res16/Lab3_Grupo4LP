@@ -5,6 +5,7 @@ public class Pintura extends Obra
 { 
    private String tecnica;
 
+   //construtor
    public Pintura(String titulo, String autor, int anoCriacao, String tecnica) 
    {
 	   super(titulo, autor, anoCriacao);
