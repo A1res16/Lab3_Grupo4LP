@@ -12,7 +12,15 @@ public class Pintura extends Obra
 	   this.tecnica = tecnica;
    }
    
-   //polimorfismo
+   
+   
+   public String getTecnica() {
+	return tecnica;
+}
+
+
+
+//polimorfismo
    //Metodo para imprimir os detalhes das obras
    @Override
    public void imprimirDetalhes()
