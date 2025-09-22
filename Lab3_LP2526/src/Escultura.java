@@ -1,6 +1,6 @@
 /** 
- * @author Rodrigo
- * classe escultura que herda da obra
+ * @author Rodrigo Miguel
+ * classe escultura que herda da obra 
  */
 
 public class Escultura extends Obra {
