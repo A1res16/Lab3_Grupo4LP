@@ -59,7 +59,7 @@ public class GereObra {
 		{
 			if(o1.getClass().getSimpleName().equalsIgnoreCase("PinturaAOleo"))
 			{
-				if(((PinturaAOleo)o1).getTipo().equalsIgnoreCase(tipo))
+				if(((PinturaAOleo)o1).getTipoDeTela().equalsIgnoreCase(tipo))
 				{
 					o1.imprimirDetalhes();
 				}
@@ -69,7 +69,7 @@ public class GereObra {
 	
 	
 	
-	public void imprimirDetalhesPorTipo(String c1)
+	public void imprimirDetalhesPorTipo()
 	{
 		imprimirDetalhesPorTipoCicloFor("Pintura");
 		imprimirDetalhesPorTipoCicloFor("PinturaAOleo");

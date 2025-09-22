@@ -1,4 +1,4 @@
-package lab3;
+
 
 import java.util.Scanner;
 
@@ -34,7 +34,7 @@ public class Teste {
 		System.out.println("--REGISTO DA OBRA--");
 		String titulo = lerLinha("Título: ");
 		String autor = lerLinha("Autor: ");
-		int ano = lerLinha("Ano: ");
+		int ano = lerInt("Ano: ");
 		gere.registarObra(titulo, autor, ano);
 		}
 	
@@ -50,7 +50,7 @@ public class Teste {
         gere.imprimirPinturaAOleoPorTipoDeTela(tipoTela);
     }
 	
-	private static int LerInt(String mensagem) {
+	private static int lerInt(String mensagem) {
 		while(true) {
 			try {
 				System.out.print(mensagem);
