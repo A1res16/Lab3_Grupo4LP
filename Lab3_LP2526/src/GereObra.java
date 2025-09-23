@@ -14,19 +14,54 @@ public class GereObra {
 	}
 	
 	
-	public void registarObra(String titulo, String autor, int ano)
+	public Boolean pesquisarObra(String titulo, String autor)
 	{
 		for(Obra o1 : obras)
 		{
 			if(o1.getTitulo().equalsIgnoreCase(titulo) && o1.getAutor().equalsIgnoreCase(autor)) 
 			{
 				System.out.print("obra já existente");
-				return;
+				return false;
 			}
 		}
-		Obra o2 = new Obra(titulo, autor, ano);
-		obras.add(o2);
-		System.out.print("obra registada");
+		return true;
+	}
+	
+	public void registarPintura(String titulo, String autor, int ano, String tecnica)
+	{
+		if(pesquisarObra(titulo, autor) == false)
+		{
+			return;
+		}
+		Pintura p1 = new Pintura(titulo, autor, ano, tecnica);
+		obras.add(p1);
+		System.out.println("Pintura registada...");
+
+	}
+	
+	
+	public void registarPinturaAOleo(String titulo, String autor, int ano, String tecnica, String tipoDeTela)
+	{
+		if(pesquisarObra(titulo, autor) == false)
+		{
+			return;
+		}
+		PinturaAOleo p1 = new PinturaAOleo(titulo, autor, ano, tecnica, tipoDeTela);
+		obras.add(p1);
+		System.out.println("Pintura a óleo registada...");
+	}
+	
+	
+	public void registarEscultura(String titulo, String autor, int ano, String material)
+	{
+		if(pesquisarObra(titulo, autor) == false)
+		{
+			return;
+		}
+		Escultura p1 = new Escultura(titulo, autor, ano, material);
+		obras.add(p1);
+		System.out.println("Escultura registada...");
+
 	}
 	
 	
@@ -82,6 +117,7 @@ public class GereObra {
 		int count = 0;
 		
 		System.out.println(c1 +": ");
+		System.out.println(" ");
 		for(Obra o1 : obras)
 		{
 			if(o1.getClass().getSimpleName().equalsIgnoreCase(c1))
@@ -91,6 +127,7 @@ public class GereObra {
 			}
 		}
 		System.out.println("numero de obras: " +count);
+		System.out.println(" ");
 		
 	}
 	

@@ -35,8 +35,45 @@ public class Teste {
 		String titulo = lerLinha("Título: ");
 		String autor = lerLinha("Autor: ");
 		int ano = lerInt("Ano: ");
-		gere.registarObra(titulo, autor, ano);
+		int tipo = lerInt("tipo: \n1) Pintura\n2) Escultura");
+		while (tipo != 1 && tipo != 2)
+		{
+			System.out.println("Por favor, escolha uma das opções.");
+			tipo = lerInt("tipo: \n1) Pintura\n2) Escultura");
 		}
+		if (tipo == 1) 
+		{
+			registarObraPintura(titulo, autor, ano, gere);
+		}
+		if (tipo == 2) 
+		{
+			registarObraEscultura(titulo, autor, ano, gere);
+		}
+	}
+	
+	public static void registarObraPintura(String titulo, String autor, int ano, GereObra gere ) {
+		String tecnica = lerLinha("Técnica: ");
+		int tipo = lerInt("Pintura a óleo: \n1) Sim\n2) Não");
+		while (tipo != 1 && tipo != 2)
+		{
+			System.out.println("Por favor, escolha uma das opções.");
+			tipo = lerInt("Pintura a óleo: \n1) Sim\n2) Não");
+		}
+		if (tipo == 1) 
+		{
+			String tipoDeTela = lerLinha("Tipo de tela: ");
+			gere.registarPinturaAOleo(titulo, autor, ano, tecnica, tipoDeTela);
+			return;
+		}
+		gere.registarPintura(titulo, autor, ano, tecnica);
+	}
+	
+	public static void registarObraEscultura(String titulo, String autor, int ano, GereObra gere ) {
+		String material = lerLinha("Material: ");
+		gere.registarEscultura(titulo, autor, ano, material);
+	}
+	
+	
 	
 	private static void pesquisarPorTitulo(GereObra gere) {
 		System.out.println("--PESQUISAR--");
